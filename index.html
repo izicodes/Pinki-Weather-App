@@ -17,6 +17,11 @@
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"
     ></script>
+    <link
+      rel="shortcut icon"
+      href="https://em-content.zobj.net/source/microsoft-teams/363/cloud_2601-fe0f.png"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -27,8 +32,7 @@
           <p class="text-body-secondary">Pink themed weather app!</p>
         </div>
         <form action="\">
-          <label for="cityNameInput">
-            Enter City Name: </label
+          <label for="cityNameInput"> Enter City Name: </label
           ><input
             type="text"
             class="form-control"
@@ -42,20 +46,39 @@
             id="enterBtn"
           />
         </form>
-        <hr class="border opacity-75">
+        <hr class="border opacity-75" />
         <div class="btnContainers">
-            <input type="btn" class="btn btn-primary" value="Paris">
-            <input type="btn" class="btn btn-primary" value="Tokyo">
-            <input type="btn" class="btn btn-primary" value="London">
-            <input type="btn" class="btn btn-primary" value="San Francisco">
-            <input type="btn" class="btn btn-primary" value="Oslo">
+          <input type="btn" class="btn btn-primary" value="Paris" />
+          <input type="btn" class="btn btn-primary" value="Tokyo" />
+          <input type="btn" class="btn btn-primary" value="London" />
+          <input type="btn" class="btn btn-primary" value="San Francisco" />
+          <input type="btn" class="btn btn-primary" value="Oslo" />
         </div>
-
       </div>
     </div>
     <div id="displayWeatherSection">
-      <div class="wrapper">
         
+      <div class="wrapper">
+        <p id="changeMeasurement" class="btn btn-primary data-type="celsius">°C</p>
+        <div class="container text-center myHeader">
+          <p id="currentTemp">19°</p>
+          <h1 id="CityTitle">London</h1>
+          <div class="smallDetails">
+            <p id="date">Monday 15 August 2023</p>
+          </div>
+        </div>
+        <div class="container myDays">
+          <div class="row">
+            <div class="col-4">hi</div>
+            <div class="col-4">hu</div>
+            <div class="col-4">sd</div>
+          </div>
+          <div class="row">
+            <div class="col-4">erw</div>
+            <div class="col-4">wre</div>
+            <div class="col-4">wer</div>
+          </div>
+        </div>
       </div>
     </div>
 
