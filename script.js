@@ -22,16 +22,16 @@ let weather = {
 };
 
 const form = document.querySelector("form");
-const searchBox = document.querySelector("#searchBox");
-const h1 = document.querySelector("h1");
+const cityNameInput = document.querySelector("#cityNameInput");
+const CityTitle = document.querySelector("#CityTitle");
 const date = document.querySelector("#date");
-const f = document.querySelector("#F");
+const enterBtn = document.querySelector("#enterBtn");
 const c = document.querySelector("#C");
 const temp = document.querySelector("#temp");
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-  h1.textContent = searchBox.value;
+  CityTitle.textContent = cityNameInput.value;
 });
 
 let now = new Date();
