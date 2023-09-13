@@ -22,16 +22,26 @@ let weather = {
 };
 
 const form = document.querySelector("form");
-const searchBox = document.querySelector("#searchBox");
-const h1 = document.querySelector("h1");
+const cityNameInput = document.querySelector("#cityNameInput");
+const CityTitle = document.querySelector("#CityTitle");
 const date = document.querySelector("#date");
-const f = document.querySelector("#F");
-const c = document.querySelector("#C");
-const temp = document.querySelector("#temp");
+const enterBtn = document.querySelector("#enterBtn");
+const currentTemp = document.querySelector("#currentTemp");
+const changeMeasurement = document.querySelector("#changeMeasurement");
+const cityBtns = document.querySelectorAll(".btnContainers input[type=btn]");
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-  h1.textContent = searchBox.value;
+  CityTitle.textContent = cityNameInput.value;
+});
+
+console.log(cityBtns);
+
+cityBtns.forEach(function(btn) {
+    btn.addEventListener("click", function() {
+        CityTitle.textContent = btn.value;
+        cityNameInput.value = btn.value;
+    });
 });
 
 let now = new Date();
@@ -44,19 +54,45 @@ let days = [
   "Friday",
   "Saturday",
 ];
+let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+  
 
-date.textContent = `${days[now.getDay()]} ${now.getHours()}:${now
+date.textContent = `${days[now.getDay()]} ${now.getDate()} ${months[now.getMonth()]} ${now.getHours()}:${now
   .getMinutes()
   .toString()
   .padStart(2, "0")}`;
 
-f.addEventListener("click", () => changeTemp("f"));
-c.addEventListener("click", () => changeTemp("c"));
-
 function changeTemp(t) {
-  if (t === "c") {
+  if (t === "celsius") {
     temp.textContent = "19";
   } else if (t === "f") {
     temp.textContent = "66.2";
   }
 }
+
+changeMeasurement.addEventListener("click", function() {
+    let t = this.dataset.type;
+
+    if (t === "celsius") {
+        currentTemp.textContent = "66.2°";
+        this.textContent = "°F";
+        this.dataset.type = "fahrenheit";
+      } else if (t === "fahrenheit") {
+        currentTemp.textContent = "19°";
+        this.textContent = "°C";
+        this.dataset.type = "celsius";
+      }
+});
